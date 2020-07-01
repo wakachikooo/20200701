@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+  </head>
+
+  <script src="src/index.js"></script>
+  <script type="text/javascript" language="javascript">
+    function onButtonClick() {
+      target = document.getElementById("output");
+      var canvas = document.querySelector("#draw-area");
+      var context = canvas.getContext("2d");
+      // console.log(context.strokeStyle);
+      context.strokeStyle = document.forms.form.col.value;
+      canvas.style["background-color"] = document.forms.form.col2.value;
+      // console.log(context.strokeStyle);
+    }
+  </script>
+
+  <body>
+    <form action="" method="" name="form">
+      <p>
+        描画カラーコード：
+        <input
+          type="text"
+          name="col"
+          size="18"
+          maxlength="20"
+          value="#000000"
+        />
+        <p>
+          背景カラーコード：
+          <input
+            type="text"
+            name="col2"
+            size="18"
+            maxlength="20"
+            value="#FFFFFF"
+          />
+        </p>
+        <input
+          type="button"
+          name="colsub"
+          onclick="onButtonClick()"
+          value="変更"
+        />
+      </p>
+    </form>
+    <hr />
+    <div id="output"></div>
+
+    <div id="app"></div>
+    <div>
+      <button id="clear-button">全消し</button>
+    </div>
+
+    <div>
+      <canvas
+        id="draw-area"
+        width="400px"
+        height="400px"
+        style="border: 1px solid #000000;"
+        >
+      </canvas>
+    </div>
+  </body>
+</html>
